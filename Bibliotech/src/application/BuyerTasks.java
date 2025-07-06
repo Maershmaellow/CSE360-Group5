@@ -30,7 +30,6 @@ public class BuyerTasks {
 		
 		
 		
-		
 		return searchList; 
 	}
 	
