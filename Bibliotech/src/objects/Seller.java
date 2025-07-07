@@ -15,6 +15,7 @@ public class Seller {
 	}
 	public Seller() {
 		total_revenue = 0;
+		sellList = new ArrayList<>();
 	}
 	
 	
@@ -32,9 +33,10 @@ public class Seller {
 	
 	
 	public String toString() {
-		String sellerDat = "-- Seller Data --"+"\n";
-		sellerDat += "revenue: "+total_revenue+"\n";
+		String sellerDat = total_revenue+",BOOK LISTINGS,";
+		for(Book book : sellList) {
+			sellerDat += book.toString();
+		}
 		return sellerDat;
 	}
-
 }
