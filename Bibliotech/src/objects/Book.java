@@ -7,13 +7,14 @@ public class Book {
 	private String condition;
 	private double price;
 	private boolean sold;
+	private Seller seller;
 	
-	public Book(String title, String author, String genre, String condition, double price) {
+	public Book(String title, String author, String genre, String condition, double price, Seller seller) {
 		this.title = title;
 		this.author = author;
 		this.condition = condition;
 		this.sold = false;
-		
+		this.seller = seller;
 		
 		if(price < 0) {						// Note: if the user does not manually enter a price, price parameter will be -1
 			this.price = generatePrice();
@@ -45,6 +46,14 @@ public class Book {
 		return sold;
 	}
 	
+	public String getCondition() {
+		return condition;
+	}
+	
+	public Seller getSeller() {
+		return seller;
+	}
+	
 	
 	
 	public String toString() {
@@ -53,6 +62,8 @@ public class Book {
 		bookData += "author: "+author+"\n";
 		bookData += "condition: "+condition+"\n";
 		bookData += "price: "+String.valueOf(price)+"\n";
+		bookData += "sold: "+String.valueOf(sold)+"\n";
+		bookData += "seller: "+seller.toString()+"\n";
 		return bookData;
 	}
 }
