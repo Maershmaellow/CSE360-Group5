@@ -6,6 +6,7 @@ public class User {
 	private String asuID;
 	private String password;
 	private boolean adminPriveleges;
+	private boolean isActive;
 	
 	private Buyer buyerDat;
 	private Seller sellerDat;
@@ -20,25 +21,33 @@ public class User {
 		buyerDat = new Buyer();
 		sellerDat = new Seller();
 	}
-	public User(String asuID, String password, boolean adminPriveleges, String temp, int rev, ArrayList<Book> sales) {
-		this.asuID = asuID;
-		this.password = password;
-		this.adminPriveleges = adminPriveleges;
-		
-		buyerDat = new Buyer(temp);
-		sellerDat = new Seller(rev, sales);
-	}
-	
-	public String getID() {
+
+	public String getAsuID() {
 		return asuID;
 	}
 	
-	public Buyer getBuyer() {
+	public String getPassword() {
+		return password;
+	}
+	
+	public boolean isAdmin() {
+		return adminPriveleges;
+	}
+	
+	public boolean isActive() {
+		return isActive;
+	}
+	
+	public Buyer getBuyerDat() {
 		return buyerDat;
 	}
 	
-	public Seller getSeller() {
+	public Seller getSellerDat() {
 		return sellerDat;
+	}
+	
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
 	}
 	
 	public String toString() {

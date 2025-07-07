@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -13,10 +14,10 @@ import objects.User;
 
 public class FileManagement {
 	public static File makeFile(Book book) {
-		Path filePath = Path.get("Books", book.getGenre(), book.getName(),".txt");
-		File newFile = new File(filePath);
+		Path filePath = Paths.get(book.getName()+".txt");
+		File newFile = filePath.toFile();
 		try {
-			FileWriter writer = new FileWriter(filePath);
+			FileWriter writer = new FileWriter(newFile);
 			writer.write(book.toString());
 			writer.close();
 		}catch (IOException e) {
@@ -26,10 +27,10 @@ public class FileManagement {
 		return newFile;
 	}
 	public static File makeFile(User account) {
-		String filePath = "Accounts/"+account.getID()+".txt";
-		File newFile = new File(filePath);
+		Path filePath = Paths.get(account.getID()+".txt");
+		File newFile = filePath.toFile();
 		try {
-			FileWriter writer = new FileWriter(filePath);
+			FileWriter writer = new FileWriter(newFile);
 			writer.write(account.toString());
 			writer.close();
 		}catch (IOException e) {
@@ -68,7 +69,7 @@ public class FileManagement {
 		String readData = "";
 		try {
 			Scanner read = new Scanner(file);
-			if(read.hasNextLine()) {
+			while(read.hasNextLine()) {
 				readData = read.nextLine()+"\n";
 			}
 			read.close();
