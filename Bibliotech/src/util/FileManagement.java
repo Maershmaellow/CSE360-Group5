@@ -27,7 +27,7 @@ public class FileManagement {
 		return newFile;
 	}
 	public static File makeFile(User account) {
-		Path filePath = Paths.get(account.getID()+".txt");
+		Path filePath = Paths.get(account.getAsuID()+".txt");
 		File newFile = filePath.toFile();
 		try {
 			FileWriter writer = new FileWriter(newFile);
@@ -50,7 +50,7 @@ public class FileManagement {
 	public static User userFromString(String filecontents) {
 		String[] delimited = filecontents.split(",");
 		// String asuID, String password, boolean adminPriveleges, String temp, int rev, ArrayList<Book> sales
-		String bookReverse = "";
+		/*(tring bookReverse = "";
 		ArrayList<Book> bookArr = new ArrayList<>();
 		for(int i = 7; i < delimited.length; i++) {
 			bookReverse += delimited[i];
@@ -60,11 +60,12 @@ public class FileManagement {
 			}else {
 				bookReverse+=",";
 			}
-		}
-		User newBook = new User(delimited[0], delimited[1], Boolean.parseBoolean(delimited[2]), delimited[4], Integer.parseInt(delimited[6]), bookArr);
+		}*/
+		User newBook = new User(delimited[0], delimited[1], Boolean.parseBoolean(delimited[2]));
 		return newBook;
 	}
 	
+	// Stick with the ol' reliable
 	public static String readfromFile(File file) {
 		String readData = "";
 		try {
