@@ -5,7 +5,7 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import objects.User;
 
-
+// latest version (comment to differentiate) by daniel
 
 public class Main extends Application {
 	private Stage primaryStage;
