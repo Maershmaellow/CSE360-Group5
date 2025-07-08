@@ -16,7 +16,6 @@ public class Book {
 		this.condition = condition;
 		this.sold = false;
 		this.sellerId = 0; 
-//seller ID
 		
 		
 		if(price < 0) {						
@@ -35,7 +34,7 @@ public class Book {
 		this.sellerId = sellerId;
 		
 		
-		if(price < 0) {		// price parameter will be -1 if no entry
+		if(price < 0) {						
 			this.price = generatePrice();
 		} else {
 			this.price = price;
@@ -45,7 +44,7 @@ public class Book {
 	
 	
 	public double generatePrice() {
-	
+		
 		return 0;
 	}
 	
