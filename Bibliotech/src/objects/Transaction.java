@@ -3,64 +3,62 @@ package objects;
 import java.time.LocalDate;
 
 public class Transaction {
-	private String transactionID;
-    private String buyerID;
-    private String sellerID;
-    
+    private String transactionId;
+    private int buyerId;
+    private int sellerId;
     private String bookTitle;
-    private double cost;
-    private String status;
+    private double amount;
     private LocalDate date;
+    private String status;
     
-    
-    public Transaction(String transactionId, String buyerId, String sellerId, String bookTitle, double cost, String status, LocalDate Date) {
-        this.transactionID = transactionId;
-        this.buyerID = buyerId;
-        this.sellerID = sellerId;
-        
+    public Transaction(String transactionId, int buyerId, int sellerId, String bookTitle, double amount, LocalDate date, String status) {
+        this.transactionId = transactionId;
+        this.buyerId = buyerId;
+        this.sellerId = sellerId;
         this.bookTitle = bookTitle;
-        this.cost = cost;
-        this.status = status;
+        this.amount = amount;
         this.date = date;
+        this.status = status;
     }
     
     public String getTransactionId() {
-        return transactionID;
-    }
-    public String getBuyerId() {
-        return buyerID;
-    }
-    public String getSellerId() {
-        return sellerID;
+        return transactionId;
     }
     
+    public int getBuyerId() {
+        return buyerId;
+    }
     
+    public int getSellerId() {
+        return sellerId;
+    }
     
     public String getBookTitle() {
         return bookTitle;
     }
     
-    public double getPrice() {
-        return cost;
+    public double getAmount() {
+        return amount;
+    }
+    
+    public LocalDate getDate() {
+        return date;
     }
     
     public String getStatus() {
         return status;
     }
     
-    public LocalDate getDate() {
-    	return date;
-    }
-    
+    @Override
     public String toString() {
-        String transactionData = transactionID+",";
-        transactionData = buyerID+",";
-        transactionData += sellerID+",";
-        transactionData += bookTitle+",";
-        transactionData += cost+",";
-        transactionData += status;
-        
-        return transactionData;
+        return "Transaction{" +
+                "transactionId='" + transactionId + '\'' +
+                ", buyerId=" + buyerId +
+                ", sellerId=" + sellerId +
+                ", bookTitle='" + bookTitle + '\'' +
+                ", amount=" + amount +
+                ", date=" + date +
+                ", status='" + status + '\'' +
+                '}';
     }
-    
 }
