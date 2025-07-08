@@ -12,7 +12,8 @@ public class Buyer {
 	}
 	
 	public String toString() {
-		String buyerDat = temp;
+		String buyerDat = "Buyer Data"+"\n";
+		buyerDat += temp;
 		return buyerDat;
 	}
 }

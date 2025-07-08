@@ -8,6 +8,7 @@ public class Seller {
 	
 	public Seller(int rev, ArrayList<Book> bookList) {
 		this.total_revenue = rev;
+		this.sellList = new ArrayList<>();
 		
 		for(Book thisBook : bookList) {
 			sellList.add(thisBook);
@@ -33,10 +34,9 @@ public class Seller {
 	
 	
 	public String toString() {
-		String sellerDat = total_revenue+",BOOK LISTINGS,";
-		for(Book book : sellList) {
-			sellerDat += book.toString();
-		}
+		String sellerDat = "Seller Data"+"\n";
+		sellerDat += "revenue: "+total_revenue+"\n";
 		return sellerDat;
 	}
+
 }
